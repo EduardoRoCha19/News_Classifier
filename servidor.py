@@ -4,9 +4,8 @@ from waitress import serve
 import numpy as np
 import pickle
 from ModelClassifier import text_processing
-import nltk
 
-filename = 'C:/Users/VENTA/Desktop/flaskEjemplo/ModelClassifier.sav'
+filename = 'C:/Users/eduar/Documents/Processing/libraries/News_Classifier/ModelClassifier.sav'
 loaded_model = pickle.load(open(filename, 'rb'))
 
 app = Flask(__name__)
@@ -67,7 +66,6 @@ def predict2():
     else:
         return "ERROR"
 
-if __name__ == "__main__":     
-    nltk.download('stopwords')       
+if __name__ == "__main__":            
     print("corriendo")
     serve(app, host="0.0.0.0", port=5000)
